@@ -1,0 +1,8 @@
+[
+  {
+    "shop_id": "demo_shop",
+    "name": "Demo Shop",
+    "bot_token": "PASTE_TELEGRAM_BOT_TOKEN_FROM_BOTFATHER",
+    "manager_chat_id": 11111111
+  }
+]
