@@ -13,6 +13,27 @@ import csv
 from bot import store, translit
 
 
+def rows_to_records(path: str) -> list[dict]:
+    """Parse CSV rows without converting to chunks."""
+    records: list[dict] = []
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if any(v and v.strip() for v in row.values()):
+                records.append(dict(row))
+    return records
+
+
+def extract_key(chunk: str, field: str) -> str | None:
+    """Extract a named field value from the first line of a stored chunk."""
+    prefix = f"{field}: "
+    first_line = chunk.split("\n")[0]
+    for part in first_line.split("; "):
+        if part.startswith(prefix):
+            return part[len(prefix):]
+    return None
+
+
 def rows_to_chunks(path: str) -> list[str]:
     chunks: list[str] = []
     with open(path, newline="", encoding="utf-8") as f:

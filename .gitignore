@@ -1,0 +1,31 @@
+# Secrets — never commit these
+.env
+shops.json
+.env.example
+
+# Database — contains customer data and catalog vectors
+data/bot.db
+data/*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# ML model cache
+.cache/
+*.bin
+*.safetensors
+
+# macOS
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp

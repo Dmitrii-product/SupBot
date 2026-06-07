@@ -10,8 +10,8 @@ load_dotenv()
 ROOT = Path(__file__).resolve().parent.parent
 
 LLM_API_KEY = os.getenv("LLM_API_KEY", "")
-LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/")
-LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.deepseek.com")
+LLM_MODEL = os.getenv("LLM_MODEL", "deepseek-chat")
 
 EMBED_MODEL = os.getenv("EMBED_MODEL", "intfloat/multilingual-e5-small")
 
@@ -24,6 +24,10 @@ ESCALATE_KEYWORDS = [
     "operator", "оператор", "odam", "human", "menejer", "менеджер",
     "shikoyat", "жалоба", "claim", "vozvrat", "возврат", "refund",
 ]
+
+
+ADMIN_USER = os.getenv("ADMIN_USER", "admin")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "")
 
 
 def load_shops(path: str | None = None) -> list[dict]:
