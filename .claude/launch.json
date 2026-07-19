@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "3456"],
       "port": 3456
+    },
+    {
+      "name": "voicelab",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "cd '~/claude/ASR support agent' && exec python3 -m voicelab.server 8377"],
+      "port": 8377
     }
   ]
 }
